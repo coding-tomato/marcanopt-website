@@ -7,6 +7,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 // We import object and document schemas
 import testimony from './testimony'
 import mission from './mission'
+import component from './component'
+import contact from './contact'
+import hero from './hero'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,5 +24,8 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     testimony,
     mission,
+    component,
+    contact,
+    hero
   ]),
 })

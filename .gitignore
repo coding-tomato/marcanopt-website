@@ -37,3 +37,5 @@ yarn-error.log*
 # VSCode
 .vscode/
 *.code-workspace
+
+marcanopt_site_journal.md
