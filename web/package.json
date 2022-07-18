@@ -6,17 +6,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "cd .. && husky install"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npx eslint . --fix",
+      "git add"
+    ],
+    "*.{css}": [
+      "npx stylelint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "@sanity/client": "^3.3.2",
     "@sanity/image-url": "^1.0.1",
     "groq": "^2.29.3",
-    "husky": "^8.0.1",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "sass": "^1.52.3",
     "zod": "^3.17.3"
   },
   "devDependencies": {
@@ -24,7 +33,12 @@
     "@types/react": "18.0.12",
     "@types/react-dom": "18.0.5",
     "eslint": "8.17.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.1.6",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "stylelint": "^14.9.1",
+    "stylelint-config-standard": "^26.0.0",
     "typescript": "4.7.3"
   }
 }
