@@ -10,6 +10,9 @@
     "prepare": "husky install"
   },
   "lint-staged": {
+    "*.tsx": [
+      "npx eslint . --fix"
+    ],
     "*.css": [
       "npx stylelint --fix"
     ]
