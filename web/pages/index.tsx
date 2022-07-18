@@ -1,75 +1,33 @@
-
-import { useState, useEffect } from 'react';
-import Image from 'next/image'
 import type { NextPage, GetServerSideProps } from 'next'
-import sanityClient from '@sanity/client'
-
-const client = sanityClient({
-    projectId: 'eqlzn09g',
-    dataset: 'production',
-    useCdn: true,
-});
-
-interface Props {
-  data: {
-    example: string,
-  }
-}
-
-interface Testimony {
-  name: string,
-  comment: string,
-  imageUrl: string,
-}
+import { Testimony, Props } from '../utils/objectSchemas';
+import { getMissionData } from '../utils/sanity';
+import { urlFor } from '../utils/imageBuilder';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const data = {
-    example: "test",
-  }
+  const data = await getMissionData();
 
   return {
     props: {
-      data: { ...data }
+      data,
     }
   }
 }
 
-const Home: NextPage<Props> = ({ data }) => {
-  const [sanityData, setSanityData] = useState<Testimony>({
-    name: "",
-    comment: "",
-    imageUrl: "",
-  });
-
-  useEffect(() => {
-    const response = client
-      .fetch(`
-          *[_type == 'testimony'] {
-            name,
-            comment,
-            "imageUrl": picture.asset->url
-          }
-        `)
-      .then(data => {
-        setSanityData(data[0])
-      });
-  }, [])
+const Home: NextPage<Props<Testimony>> = ({data}) => {
+  const picture = data[0].picture || null;
 
   return (
     <div>
-      <h3>Testimonios</h3>
-      <p>{sanityData.name}</p>
-      <p>{sanityData.comment}</p>
+      <h3>Ejemplo</h3>
       {
-        sanityData.imageUrl !== "" &&
-          <Image
-            src={sanityData.imageUrl}
-            width={200}
-            height={250}
-            alt="Francys"
+        picture
+        &&
+        <>
+          <img
+            src={urlFor(picture).width(300).width(300).url()}
           />
+        </>
       }
-      
     </div>
   )
 }

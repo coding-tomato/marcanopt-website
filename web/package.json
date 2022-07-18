@@ -10,11 +10,14 @@
   },
   "dependencies": {
     "@sanity/client": "^3.3.2",
+    "@sanity/image-url": "^1.0.1",
+    "groq": "^2.29.3",
     "husky": "^8.0.1",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "sass": "^1.52.3"
+    "sass": "^1.52.3",
+    "zod": "^3.17.3"
   },
   "devDependencies": {
     "@types/node": "17.0.41",
