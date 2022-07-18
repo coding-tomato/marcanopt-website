@@ -1,6 +1,15 @@
 {
-  "extends": "next/core-web-vitals",
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-typescript",
+    "next/core-web-vitals"
+  ],
   "rules": {
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "linebreak-style": ["error", "windows"]
   }
 }
