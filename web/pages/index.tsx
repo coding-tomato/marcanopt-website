@@ -1,4 +1,4 @@
-import type { NextPage, GetServerSideProps } from 'next'
+import type { NextPage, GetServerSideProps } from 'next';
 import { Testimony, Props } from '../utils/validators';
 import { getMissionData } from '../utils/sanity';
 import { urlFor } from '../utils/imageBuilder';
@@ -7,7 +7,7 @@ interface ServerSideData {
   testimony: Testimony
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const data = await getMissionData();
 
   return {
@@ -15,11 +15,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       data: {
         testimony: data,
       },
-    }
-  }
-}
+    },
+  };
+};
 
-const Home: NextPage<Props<ServerSideData>> = ({data}) => {
+const Home: NextPage<Props<ServerSideData>> = ({ data }) => {
   const picture = data.testimony[0].picture || null;
 
   return (
@@ -35,7 +35,7 @@ const Home: NextPage<Props<ServerSideData>> = ({data}) => {
         </>
       }
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

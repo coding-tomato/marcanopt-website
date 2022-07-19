@@ -8,8 +8,22 @@
     "airbnb-typescript",
     "next/core-web-vitals"
   ],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  ],
   "rules": {
     "@next/next/no-img-element": "off",
     "linebreak-style": ["error", "windows"]
-  }
+  },
+  "ignorePatterns": ["next.config.js"]
 }
