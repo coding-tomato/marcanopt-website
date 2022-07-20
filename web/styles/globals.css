@@ -1,13 +1,5 @@
-body {
-  padding: 0;
-  margin: 0;
-}
+/* Base */
+@import "./base/base.css";
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
+/* Components */
+@import "./components/navigation.css";

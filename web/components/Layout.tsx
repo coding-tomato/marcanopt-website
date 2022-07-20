@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from './Navigation';
 
 interface Props {
   children: React.ReactNode
@@ -6,7 +7,7 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => (
     <div>
-        <h1>Header test</h1>
+        <Navigation />
         {children}
         <h1>Footer test</h1>
     </div>
