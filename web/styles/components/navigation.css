@@ -1,3 +1,37 @@
 .navigation {
   background-color: red;
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  min-height: 4rem;
+}
+
+.navigation__items {
+  display: flex;
+  align-items: center;
+}
+
+.navigation__burger-menu {
+  background: none;
+  border: none;
+}
+
+.navigation__burger-menu-items {
+  display: none;
+  position: absolute;
+  align-items: center;
+  flex-direction: column;
+  background-color: lightblue;
+  width: 100%;
+  top: 100%;
+  right: 0;
+}
+
+.navigation__burger-menu-items--open {
+  display: flex;
+}
+
+.navigation__burger-menu-items > * {
+  padding: 0.625rem;
 }

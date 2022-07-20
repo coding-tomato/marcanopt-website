@@ -6,11 +6,13 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }) => (
-    <div>
-        <Navigation />
-        {children}
-        <h1>Footer test</h1>
+  <div className='container'>
+    <Navigation />
+    <div className='page-content'>
+      {children}
     </div>
+    <h1>Footer test</h1>
+  </div>
 );
 
 export default Layout;

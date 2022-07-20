@@ -1,0 +1,5 @@
+:root {
+  --mobile-viewport: 375px;
+  --tablet-viewport: 768px;
+  --desktop-viewport: 1440px;
+}

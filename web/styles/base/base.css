@@ -25,3 +25,8 @@ a:hover,
 a:visited {
   text-decoration: none;
 }
+
+.page-content {
+  position: relative;
+  margin-top: 4rem;
+}
